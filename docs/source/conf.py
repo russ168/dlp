@@ -31,6 +31,8 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+import sphinx_rtd_theme
+import dlp
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
@@ -75,7 +77,6 @@ author = 'rdccaa'
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
-import dlp
 # The short X.Y version.
 version = dlp.__version__
 # The full version, including alpha/beta/rc tags.
@@ -106,7 +107,6 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-import sphinx_rtd_theme
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -190,8 +190,6 @@ texinfo_documents = [
 ]
 
 
-
-
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
@@ -199,4 +197,26 @@ intersphinx_mapping = {
     'scipy': ('https://docs.scipy.org/doc/scipy/reference/', None),
     'pandas': ('https://pandas.pydata.org/pandas-docs/stable', None),
     'matplotlib': ('https://matplotlib.org', None),
+}
+
+
+# Options for HTML output
+# -----------------------
+
+# Enable link of 'View page source'
+#html_show_sourcelink = False
+# Add 'Edit on Github' link instead of 'View page source'
+# reference:https://docs.readthedocs.io/en/latest/vcs.html
+html_context = {
+    # Enable the "Edit in GitHub link within the header of each page.
+    'display_github': True,
+    # Set the following variables to generate the resulting github URL for each page.
+    # Format Template: https://{{ github_host|default("github.com") }}/{{ github_user }}
+    # /{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}
+    # https://github.com/ditordccaa/dlp/blob/master/docs/index.rst
+    'github_user': 'ditordccaa',
+    'github_repo': 'dlp',
+    'github_version': 'master/docs/',
+    "last_updated": True,
+    "commit": False,
 }
