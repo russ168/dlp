@@ -32,7 +32,7 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 import sphinx_rtd_theme
-import dlp
+# import dlp
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
