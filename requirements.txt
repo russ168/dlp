@@ -1,6 +1,5 @@
 codecov
 coverage
-flake8
 pytest
 sphinx
 ipython

@@ -10,7 +10,7 @@ install:
   # Install this package and the packages listed in requirements.txt.
   - pip install .
   # Install extra requirements for running tests and building docs.
-  - pip install -r requirements-dev.txt
+  - pip install -r requirements.txt
   - python -m spacy download en_core_web_lg
   - python -m spacy download fr_core_news_md
 
@@ -18,5 +18,4 @@ script:
   - coverage run -m pytest # Run the tests and check for test coverage.
   - coverage report -m # Generate test coverage report.
   - codecov # Upload the report to codecov.
-  - flake8 # Enforce code style ('relaxed' line length limit is set in .flake8 config file).
   - make -C docs html # Build the documentation.
